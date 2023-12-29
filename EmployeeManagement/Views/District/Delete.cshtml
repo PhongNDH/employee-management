@@ -1,0 +1,55 @@
+﻿@using EmployeeManagement.Utils.Constant
+@model District
+@{
+    var provinces = ViewBag.Provinces ?? new List<Province>();
+}
+<form method="post">
+    <div class="container mb-5">
+        <div class="row d-flex justify-content-center">
+            <div class="text-center mx-3">
+                <a asp-action="Index" asp-controller="District" class="btn btn-primary my-3" style="min-width:200px" asp-route-page="1" asp-route-size="@Constant.SizeOfDistrictPage">Go back</a>
+            </div>
+            <div class="col-md-8 border border-secondary px-5 py-4 m-4 rounded-2 bg-black">
+                <h3 class="text-center text-uppercase mb-4 mt-3 text-light">
+                    Delete province
+                </h3>
+                <div class="form-group px-4 text-light">
+                    <label asp-for="Name"></label>
+                    <input asp-for="Name" class="form-control text-light" style="padding:0.3rem 0" disabled placeholder="Enter name">
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group px-4 mt-4 text-light">
+                    <label asp-for="Level"></label>
+                    <select asp-for="Level" disabled class="form-control mb-3 text-light">
+                        <option value="Huyện" class="text-dark">Huyện </option>
+                        <option value="Thị xã" class="text-dark">Thị xã </option>
+                        <option value="Quận" class="text-dark">Quận </option>
+                        <option value="Thành phố" class="text-dark">Thành phố </option>
+                    </select>
+                    <span asp-validation-for="Level" class="text-danger"></span>
+                </div>
+                <div class="form-group px-4 mt-4 text-light">
+                    <label asp-for="ProvinceId"></label>
+                    <select asp-for="ProvinceId" disabled class="form-control mb-3 text-light">
+                        @foreach (Province province in provinces)
+                        {
+                            <option value=@province.Id class="text-dark">@province.Name </option>
+                        }
+                    </select>
+                    <span asp-validation-for="ProvinceId" class="text-danger"></span>
+                </div>
+                <div class="mt-5 text-center mb-3">
+                    <button type="submit" class="btn btn-danger" style="min-width:200px">
+                        Delete
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial"></partial>
+    }
+
+}

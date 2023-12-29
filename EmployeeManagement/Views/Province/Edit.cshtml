@@ -1,0 +1,43 @@
+﻿@using EmployeeManagement.Utils.Constant
+@model Province
+
+<form method="post">
+    <div class="container mb-5">
+        <div class="row d-flex justify-content-center">
+            <div class="text-center mx-3">
+                <a asp-action="Index" asp-controller="Province" class="btn btn-primary my-3" style="min-width:200px" asp-route-page="1" asp-route-size="@Constant.SizeOfProvincePage">Go back</a>
+            </div>
+            <div class="col-md-8 border border-secondary px-5 py-4 m-4 rounded-2 bg-black">
+                <h3 class="text-center text-uppercase mb-4 mt-3 text-light">
+                    Update province
+                </h3>
+                <div class="form-group px-4 text-light">
+                    <label asp-for="Name"></label>
+                    <input asp-for="Name" class="form-control text-light" style="padding:0.3rem 0" placeholder="Enter name">
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group px-4 mt-4 text-light">
+                    <label asp-for="Level"></label>
+                    <select asp-for="Level" class="form-control mb-3 text-light">
+                        <option value="Tỉnh" class="text-dark">Tỉnh </option>
+                        <option value="Tỉnh" class="text-dark">Thành phố Trung ương </option>
+                    </select>
+                    <span asp-validation-for="Level" class="text-danger"></span>
+
+                </div>
+                <div class="mt-5 text-center mb-3">
+                    <button type="submit" class="btn btn-info" style="min-width:200px">
+                        Update
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial"></partial>
+    }
+
+}
+

@@ -1,0 +1,65 @@
+﻿@using System.Reflection.Metadata
+@using Constant = EmployeeManagement.Utils.Constant.Constant
+@model EmployeeManagement.Models.Entity.AwardDiploma
+
+<form method="post">
+    <div class="container mb-5">
+        <div class="row d-flex justify-content-center">
+            <div class="text-center mx-3">
+                <a asp-action="Index"
+                   asp-controller="AwardDiploma"
+                   asp-route-page="1"
+                   asp-route-size="@Constant.SizeOfAwardDiplomaPage"
+                   class="btn btn-dark my-3"
+                   style="min-width:200px">Go back</a>
+            </div>
+            <div class="col-md-8 border border-primary px-5 py-4 m-4 rounded-2">
+                <h3 class="text-center text-uppercase mb-4 mt-3">
+                    Award diploma
+                </h3>
+                <div class="form-group px-4 mt-4">
+                    <label asp-for="EmployeeId"></label>
+                    <select disabled asp-for="EmployeeId" class="form-control mb-3">
+                        <option value=@Model.EmployeeId>@Model.EmployeeId  @Model.Employee?.Name</option>
+                    </select>
+                </div>
+                <div class="form-group px-4 mt-4">
+                    <label asp-for="DiplomaId"></label>
+                    <select disabled asp-for="DiplomaId" class="form-control mb-3">
+                        <option value=@Model.DiplomaId>@Model.Diploma?.Name</option>
+                    </select>
+                </div>
+                <div class="form-group px-4 mt-4">
+                    <label asp-for="DiplomaGrantingUnitId"></label>
+                    <select disabled asp-for="DiplomaGrantingUnitId" class="form-control mb-3">
+                        <option value=@Model.DiplomaGrantingUnitId>@Model.DiplomaGrantingUnit?.Name</option>
+                    </select>
+                </div>
+                <div class="form-group px-4 mt-4">
+                    <label asp-for="Duration"></label>
+                    <input disabled asp-for="Duration" class="form-control text-secondary" style="padding:0.3rem 0" type="number">
+                </div>
+                <div class="form-group px-4 mt-4">
+                    <label asp-for="GrantingDate"></label>
+                    <input disabled asp-for="GrantingDate" class="form-control text-secondary" style="padding:0.3rem 0" type="text" value="@Model.GrantingDate.Day/@Model.GrantingDate.Month/@Model.GrantingDate.Year">
+                </div>
+                <div class="mt-5 text-center mb-3">
+                    <button type="submit"
+                            class="btn btn-danger"
+                            style="min-width:200px">
+                        Delete
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial"></partial>
+    }
+
+}
+

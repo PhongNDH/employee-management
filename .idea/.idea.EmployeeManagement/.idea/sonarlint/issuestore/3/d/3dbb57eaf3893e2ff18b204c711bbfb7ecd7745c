@@ -1,0 +1,7 @@
+
+Rcsharpsquid:S6562h"5Provide the "DateTimeKind" when creating this object.(Òâ£È
+Wcsharpsquid:S6562p"5Provide the "DateTimeKind" when creating this object.(´î§Óıÿÿÿÿ
+lcsharpsquid:S6561i"OAvoid using "DateTime.Now" for benchmarking or timespan calculation operations.(éÈŸó
+ocsharpsquid:S6605@"RCollection-specific "Exists" method should be used instead of the "Any" extension.(Äó‘
+tcsharpsquid:S6605["RCollection-specific "Exists" method should be used instead of the "Any" extension.(ĞßîÔúÿÿÿÿ
+Ucsharpsquid:S32676"8Loops should be simplified using the "Where" LINQ method(·„“

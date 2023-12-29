@@ -1,0 +1,6 @@
+- Add Migration
+    - dotnet ef migrations add InitialCreate -p EmployeeManagement.DataAccess -s EmployeeManagement -o Migrations
+- Update database
+    - dotnet ef database update -p EmployeeManagement.DataAccess -s EmployeeManagement
+- Run
+    - dotnet watch --no-hot-reload

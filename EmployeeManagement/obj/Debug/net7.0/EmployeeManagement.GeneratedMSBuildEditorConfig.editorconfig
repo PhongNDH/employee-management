@@ -1,0 +1,149 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = EmployeeManagement
+build_property.RootNamespace = EmployeeManagement
+build_property.ProjectDir = C:\Users\phong\Desktop\Workspace\Oceantech\EmployeeManagement\EmployeeManagement\
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\phong\Desktop\Workspace\Oceantech\EmployeeManagement\EmployeeManagement
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/phong/Desktop/Workspace/Oceantech/EmployeeManagement/EmployeeManagement/Views/AwardDiploma/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXdhcmREaXBsb21hXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/phong/Desktop/Workspace/Oceantech/EmployeeManagement/EmployeeManagement/Views/AwardDiploma/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXdhcmREaXBsb21hXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/phong/Desktop/Workspace/Oceantech/EmployeeManagement/EmployeeManagement/Views/AwardDiploma/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXdhcmREaXBsb21hXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/phong/Desktop/Workspace/Oceantech/EmployeeManagement/EmployeeManagement/Views/AwardDiploma/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXdhcmREaXBsb21hXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/phong/Desktop/Workspace/Oceantech/EmployeeManagement/EmployeeManagement/Views/AwardDiploma/IndexByEmployeeId.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXdhcmREaXBsb21hXEluZGV4QnlFbXBsb3llZUlkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/phong/Desktop/Workspace/Oceantech/EmployeeManagement/EmployeeManagement/Views/Commune/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbXVuZVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/phong/Desktop/Workspace/Oceantech/EmployeeManagement/EmployeeManagement/Views/Commune/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbXVuZVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/phong/Desktop/Workspace/Oceantech/EmployeeManagement/EmployeeManagement/Views/Commune/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbXVuZVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/phong/Desktop/Workspace/Oceantech/EmployeeManagement/EmployeeManagement/Views/Commune/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbXVuZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/phong/Desktop/Workspace/Oceantech/EmployeeManagement/EmployeeManagement/Views/Diploma/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlwbG9tYVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/phong/Desktop/Workspace/Oceantech/EmployeeManagement/EmployeeManagement/Views/Diploma/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlwbG9tYVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/phong/Desktop/Workspace/Oceantech/EmployeeManagement/EmployeeManagement/Views/Diploma/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlwbG9tYVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/phong/Desktop/Workspace/Oceantech/EmployeeManagement/EmployeeManagement/Views/Diploma/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlwbG9tYVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/phong/Desktop/Workspace/Oceantech/EmployeeManagement/EmployeeManagement/Views/District/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzdHJpY3RcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/phong/Desktop/Workspace/Oceantech/EmployeeManagement/EmployeeManagement/Views/District/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzdHJpY3RcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/phong/Desktop/Workspace/Oceantech/EmployeeManagement/EmployeeManagement/Views/District/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzdHJpY3RcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/phong/Desktop/Workspace/Oceantech/EmployeeManagement/EmployeeManagement/Views/District/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzdHJpY3RcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/phong/Desktop/Workspace/Oceantech/EmployeeManagement/EmployeeManagement/Views/Employee/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/phong/Desktop/Workspace/Oceantech/EmployeeManagement/EmployeeManagement/Views/Employee/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/phong/Desktop/Workspace/Oceantech/EmployeeManagement/EmployeeManagement/Views/Employee/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/phong/Desktop/Workspace/Oceantech/EmployeeManagement/EmployeeManagement/Views/Employee/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/phong/Desktop/Workspace/Oceantech/EmployeeManagement/EmployeeManagement/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/phong/Desktop/Workspace/Oceantech/EmployeeManagement/EmployeeManagement/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/phong/Desktop/Workspace/Oceantech/EmployeeManagement/EmployeeManagement/Views/Province/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvdmluY2VcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/phong/Desktop/Workspace/Oceantech/EmployeeManagement/EmployeeManagement/Views/Province/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvdmluY2VcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/phong/Desktop/Workspace/Oceantech/EmployeeManagement/EmployeeManagement/Views/Province/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvdmluY2VcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/phong/Desktop/Workspace/Oceantech/EmployeeManagement/EmployeeManagement/Views/Province/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvdmluY2VcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/phong/Desktop/Workspace/Oceantech/EmployeeManagement/EmployeeManagement/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/phong/Desktop/Workspace/Oceantech/EmployeeManagement/EmployeeManagement/Views/Shared/_Notification.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Ob3RpZmljYXRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/phong/Desktop/Workspace/Oceantech/EmployeeManagement/EmployeeManagement/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/phong/Desktop/Workspace/Oceantech/EmployeeManagement/EmployeeManagement/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/phong/Desktop/Workspace/Oceantech/EmployeeManagement/EmployeeManagement/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/phong/Desktop/Workspace/Oceantech/EmployeeManagement/EmployeeManagement/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-zfw5uihhvp

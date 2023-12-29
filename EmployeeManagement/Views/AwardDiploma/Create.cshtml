@@ -1,0 +1,83 @@
+﻿@using EmployeeManagement.Utils.Constant
+@using EmployeeManagement.Models.Entity
+@model EmployeeManagement.Models.Entity.AwardDiploma
+@{
+    List<Diploma> diplomas = ViewBag.Diplomas ?? new List<Diploma>();
+    List<Province> provinces = ViewBag.Provinces ?? new List<Province>();
+    List<Employee> employees = ViewBag.Employees ?? new List<Employee>();
+}
+<form method="post">
+    <div class="container mb-5">
+        <div class="row d-flex justify-content-center">
+            <div class="text-center mx-3">
+                <a asp-action="Index"
+                   asp-controller="AwardDiploma"
+                   asp-route-page="1"
+                   asp-route-size="@Constant.SizeOfAwardDiplomaPage"
+                   class="btn btn-dark my-3"
+                   style="min-width:200px">Go back</a>
+            </div>
+            <div class="col-md-8 border border-primary px-5 py-4 m-4 rounded-2">
+                <h3 class="text-center text-uppercase mb-4 mt-3">
+                    Award diploma
+                </h3>
+                @if (diplomas.Count == 0 || provinces.Count == 0)
+                {
+                    <div class="form-group px-4 mb-3">
+                        <span class="text-danger">Please reload web</span>
+                    </div>
+                }
+                @*<input type="hidden" asp-for="EmployeeId" value="@ViewBag.EmployeeId" />*@
+                <div class="form-group px-4 mt-4">
+                    <label asp-for="EmployeeId"></label>
+                    <select asp-for="EmployeeId" class="form-control mb-3">
+                        @foreach (Employee employee in employees)
+                        {
+                            <option value=@employee.Id>@employee.Id  @employee.Name</option>
+                        }
+                    </select>
+                    <span asp-validation-for="EmployeeId" class="text-danger"></span>
+                </div>
+                <div class="form-group px-4 mt-4">
+                    <label asp-for="DiplomaId"></label>
+                    <select asp-for="DiplomaId" class="form-control mb-3">
+                        @foreach (Diploma diploma in diplomas)
+                        {
+                            <option value=@diploma.Id>@diploma.Name</option>
+                        }
+                    </select>
+                    <span asp-validation-for="DiplomaId" class="text-danger"></span>
+                </div>
+                <div class="form-group px-4 mt-4">
+                    <label asp-for="DiplomaGrantingUnitId"></label>
+                    <select asp-for="DiplomaGrantingUnitId" class="form-control mb-3">
+                        @foreach (Province diplomaGrantingUnit in provinces)
+                        {
+                            <option value=@diplomaGrantingUnit.Id>@diplomaGrantingUnit.Name</option>
+                        }
+                    </select>
+                    <span asp-validation-for="DiplomaGrantingUnitId" class="text-danger"></span>
+                </div>
+                <div class="form-group px-4 mt-4">
+                    <label asp-for="Duration"></label>
+                    <input asp-for="Duration" class="form-control" style="padding:0.3rem 0" type="number">
+                    <span asp-validation-for="Duration" class="text-danger"></span>
+                </div>
+                <div class="mt-5 text-center mb-3">
+                    <button type="submit"
+                            class="btn btn-primary"
+                            style="min-width:200px">
+                        Create
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial"></partial>
+    }
+}
+

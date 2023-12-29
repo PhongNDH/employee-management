@@ -1,0 +1,322 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\phong\\Desktop\\Workspace\\Oceantech\\EmployeeManagement\\EmployeeManagement\\EmployeeManagement.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\phong\\Desktop\\Workspace\\Oceantech\\EmployeeManagement\\EmployeeManagement.DataAccess\\EmployeeManagement.DataAccess.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\phong\\Desktop\\Workspace\\Oceantech\\EmployeeManagement\\EmployeeManagement.DataAccess\\EmployeeManagement.DataAccess.csproj",
+        "projectName": "EmployeeManagement.DataAccess",
+        "projectPath": "C:\\Users\\phong\\Desktop\\Workspace\\Oceantech\\EmployeeManagement\\EmployeeManagement.DataAccess\\EmployeeManagement.DataAccess.csproj",
+        "packagesPath": "C:\\Users\\phong\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\phong\\Desktop\\Workspace\\Oceantech\\EmployeeManagement\\EmployeeManagement.DataAccess\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\phong\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\phong\\Desktop\\Workspace\\Oceantech\\EmployeeManagement\\EmployeeManagement.Models\\EmployeeManagement.Models.csproj": {
+                "projectPath": "C:\\Users\\phong\\Desktop\\Workspace\\Oceantech\\EmployeeManagement\\EmployeeManagement.Models\\EmployeeManagement.Models.csproj"
+              },
+              "C:\\Users\\phong\\Desktop\\Workspace\\Oceantech\\EmployeeManagement\\EmployeeManagement.Utils\\EmployeeManagement.Utils.csproj": {
+                "projectPath": "C:\\Users\\phong\\Desktop\\Workspace\\Oceantech\\EmployeeManagement\\EmployeeManagement.Utils\\EmployeeManagement.Utils.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.8.1, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.404\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\phong\\Desktop\\Workspace\\Oceantech\\EmployeeManagement\\EmployeeManagement.Models\\EmployeeManagement.Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\phong\\Desktop\\Workspace\\Oceantech\\EmployeeManagement\\EmployeeManagement.Models\\EmployeeManagement.Models.csproj",
+        "projectName": "EmployeeManagement.Models",
+        "projectPath": "C:\\Users\\phong\\Desktop\\Workspace\\Oceantech\\EmployeeManagement\\EmployeeManagement.Models\\EmployeeManagement.Models.csproj",
+        "packagesPath": "C:\\Users\\phong\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\phong\\Desktop\\Workspace\\Oceantech\\EmployeeManagement\\EmployeeManagement.Models\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\phong\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[11.3.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.404\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\phong\\Desktop\\Workspace\\Oceantech\\EmployeeManagement\\EmployeeManagement.Utils\\EmployeeManagement.Utils.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\phong\\Desktop\\Workspace\\Oceantech\\EmployeeManagement\\EmployeeManagement.Utils\\EmployeeManagement.Utils.csproj",
+        "projectName": "EmployeeManagement.Utils",
+        "projectPath": "C:\\Users\\phong\\Desktop\\Workspace\\Oceantech\\EmployeeManagement\\EmployeeManagement.Utils\\EmployeeManagement.Utils.csproj",
+        "packagesPath": "C:\\Users\\phong\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\phong\\Desktop\\Workspace\\Oceantech\\EmployeeManagement\\EmployeeManagement.Utils\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\phong\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\phong\\Desktop\\Workspace\\Oceantech\\EmployeeManagement\\EmployeeManagement.Models\\EmployeeManagement.Models.csproj": {
+                "projectPath": "C:\\Users\\phong\\Desktop\\Workspace\\Oceantech\\EmployeeManagement\\EmployeeManagement.Models\\EmployeeManagement.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "ClosedXML": {
+              "target": "Package",
+              "version": "[0.104.0-preview2, )"
+            },
+            "Microsoft.AspNet.Mvc": {
+              "target": "Package",
+              "version": "[5.3.0, )"
+            },
+            "NPOI": {
+              "target": "Package",
+              "version": "[2.6.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.404\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\phong\\Desktop\\Workspace\\Oceantech\\EmployeeManagement\\EmployeeManagement\\EmployeeManagement.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\phong\\Desktop\\Workspace\\Oceantech\\EmployeeManagement\\EmployeeManagement\\EmployeeManagement.csproj",
+        "projectName": "EmployeeManagement",
+        "projectPath": "C:\\Users\\phong\\Desktop\\Workspace\\Oceantech\\EmployeeManagement\\EmployeeManagement\\EmployeeManagement.csproj",
+        "packagesPath": "C:\\Users\\phong\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\phong\\Desktop\\Workspace\\Oceantech\\EmployeeManagement\\EmployeeManagement\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\phong\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\phong\\Desktop\\Workspace\\Oceantech\\EmployeeManagement\\EmployeeManagement.DataAccess\\EmployeeManagement.DataAccess.csproj": {
+                "projectPath": "C:\\Users\\phong\\Desktop\\Workspace\\Oceantech\\EmployeeManagement\\EmployeeManagement.DataAccess\\EmployeeManagement.DataAccess.csproj"
+              },
+              "C:\\Users\\phong\\Desktop\\Workspace\\Oceantech\\EmployeeManagement\\EmployeeManagement.Models\\EmployeeManagement.Models.csproj": {
+                "projectPath": "C:\\Users\\phong\\Desktop\\Workspace\\Oceantech\\EmployeeManagement\\EmployeeManagement.Models\\EmployeeManagement.Models.csproj"
+              },
+              "C:\\Users\\phong\\Desktop\\Workspace\\Oceantech\\EmployeeManagement\\EmployeeManagement.Utils\\EmployeeManagement.Utils.csproj": {
+                "projectPath": "C:\\Users\\phong\\Desktop\\Workspace\\Oceantech\\EmployeeManagement\\EmployeeManagement.Utils\\EmployeeManagement.Utils.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "ClosedXML": {
+              "target": "Package",
+              "version": "[0.104.0-preview2, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.8.1, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[7.0.9, )"
+            },
+            "MoreLinq": {
+              "target": "Package",
+              "version": "[3.4.2, )"
+            },
+            "NPOI": {
+              "target": "Package",
+              "version": "[2.6.2, )"
+            },
+            "jQuery": {
+              "target": "Package",
+              "version": "[3.7.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.404\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

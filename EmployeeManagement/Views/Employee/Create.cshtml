@@ -1,0 +1,164 @@
+﻿@using EmployeeManagement.Utils.Constant
+@using EmployeeManagement.Models.Entity
+@model Employee
+@{
+    List<EthnicGroup> ethnicGroups = ViewBag.EthnicGroups ?? new List<EthnicGroup>();
+    List<Occupation> occupations = ViewBag.Occupations ?? new List<Occupation>();
+    // Initial value of province, district, commune
+    List<Province> provinces = ViewBag.Provinces ?? new List<Province>();
+    List<District> districts = ViewBag.Districts ?? new List<District>();
+    districts = districts.Where(d => d.ProvinceId == provinces[0].Id).ToList();
+    List<Commune> communes = ViewBag.Communes ?? new List<Commune>();
+    communes = communes.Where(d => d.DistrictId == districts[0].Id).ToList();
+}
+<form method="post">
+    <div class="container mb-5">
+        <div class="row d-flex justify-content-center">
+            <div class="text-center mx-3">
+                <a asp-action="Index"
+                   asp-controller="Employee"
+                   asp-route-page="1"
+                   asp-route-size="@Constant.SizeOfEmployeePage"
+                   class="btn btn-dark my-3"
+                   style="min-width:200px">Go back</a>
+            </div>
+            <div class="col-md-8 border border-primary px-5 py-4 m-4 rounded-2">
+                <h3 class="text-center text-uppercase mb-4 mt-3">
+                    Create employee
+                </h3>
+                @if (ethnicGroups.Count == 0 || occupations.Count == 0)
+                {
+                    <div class="form-group px-4 mb-3">
+                        <span class="text-danger">Please reload web</span>
+                    </div>
+                }
+                <div class="form-group px-4">
+                    <label asp-for="Name"></label>
+                    <input asp-for="Name"
+                           class="form-control"
+                           style="padding:0.3rem 0"
+                           placeholder="Enter name">
+                    <span asp-validation-for="Name"
+                          class="text-danger"></span>
+                </div>
+                <div class="form-group px-4 mt-4">
+                    <label asp-for="Dob"></label>
+                    <input asp-for="Dob" type="date"
+                           id="dateOfBirth"
+                           class="form-control"
+                           style="padding:0.3rem 0" />
+                    <span asp-validation-for="Dob"
+                          class="text-danger"></span>
+                </div>
+                <div class="form-group px-4 mt-4">
+                    <label asp-for="EthnicGroupId"></label>
+                    <select asp-for="EthnicGroupId"
+                            class="form-control mb-3">
+                        @foreach (EthnicGroup ethicGroup in
+                        ethnicGroups)
+                        {
+                            <option value=@ethicGroup.Id>
+                                @ethicGroup.Name
+                            </option>
+                        }
+                    </select>
+                    <span asp-validation-for="EthnicGroupId"
+                          class="text-danger"></span>
+                </div>
+                <div class="form-group px-4 mt-4">
+                    <label asp-for="OccupationId"></label>
+                    <select asp-for="OccupationId" class="form-control mb-3">
+                        @foreach (Occupation occupation in
+                        occupations)
+                        {
+                            <option value=@occupation.Id>
+                                @occupation.Name
+                            </option>
+                        }
+                    </select>
+                    <span asp-validation-for="OccupationId" class="text-danger"></span>
+                </div>
+                <div class="form-group px-4 mt-4">
+                    <label>Province</label>
+                    <select id="province" class="form-control mb-3">
+                        @foreach (Province province in provinces)
+                        {
+                            <option value=@province.Id>
+                                @province.Name
+                            </option>
+                        }
+                    </select>
+                </div>
+                <div class="form-group px-4 mt-4">
+                    <label>District</label>
+                    <select id="district" class="form-control mb-3">
+                        @foreach (District district in districts)
+                        {
+                            <option value=@district.Id>
+                                @district.Name
+                            </option>
+                        }
+                    </select>
+                </div>
+                <div class="form-group px-4 mt-4">
+                    <label asp-for="CommuneId"></label>
+                    <select id="commune" asp-for="CommuneId" class="form-control mb-3">
+                        @foreach (Commune commune in communes)
+                        {
+                            <option value=@commune.Id>
+                                @commune.Name
+                            </option>
+                        }
+                    </select>
+                    <span asp-validation-for="CommuneId"
+                          class="text-danger"></span>
+                </div>
+                <div class="form-group px-4 mt-4">
+                    <label asp-for="CitizenIdentityCard"></label>
+                    <input asp-for="CitizenIdentityCard"
+                           class="form-control"
+                           style="padding:0.3rem 0"
+                           placeholder="Enter citizen identity card number"
+                           id="idCard">
+                    <span asp-validation-for="CitizenIdentityCard"
+                          class="text-danger"></span>
+                </div>
+                <div class="form-group px-4 mt-2 d-flex align-items-center">
+                    <input type="checkbox" name="chk_idCard" id="chk_idCard" />
+                    <label for="chk_idCard">&nbsp; Don't have citizen identity card</label>
+                </div>
+
+                <div class="form-group px-4 mt-4">
+                    <label asp-for="PhoneNumber"></label>
+                    <input asp-for="PhoneNumber"
+                           id="phonenumber"
+                           class="form-control"
+                           style="padding:0.3rem 0"
+                           placeholder="Enter phone number">
+                    <span asp-validation-for="PhoneNumber"
+                          class="text-danger"></span>
+                </div>
+                <div class="form-group px-4 mt-2 d-flex align-items-center">
+                    <input type="checkbox" name="chk_phonenumber" id="chk_phonenumber" />
+                    <label for="chk_phonenumber">&nbsp; Don't have phone number</label>
+                </div>
+
+                <div class="mt-5 text-center mb-3">
+                    <button type="submit"
+                            class="btn btn-primary"
+                            style="min-width:200px">
+                        Create
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+<script src="~/js/employee.js"></script>
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial"></partial>
+    }
+}

@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "CZw7p4CjMFMfnz1wBxcEk/KGkn3/ahlmoZlvejNY1hj2ltQSq/Mtd4he83UQ+3YWXoAP+Yb1pobcfu3PQMUj9A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\phong\\Desktop\\Workspace\\Oceantech\\EmployeeManagement\\EmployeeManagement.Models\\EmployeeManagement.Models.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\phong\\.nuget\\packages\\fluentvalidation\\11.5.1\\fluentvalidation.11.5.1.nupkg.sha512",
+    "C:\\Users\\phong\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "C:\\Users\\phong\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.5.1\\fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
+    "C:\\Users\\phong\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\2.1.0\\microsoft.extensions.dependencyinjection.abstractions.2.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}

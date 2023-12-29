@@ -1,0 +1,32 @@
+﻿@using EmployeeManagement.Utils.Constant
+@model Diploma
+<form method="post">
+    <div class="container mb-5">
+        <div class="row d-flex justify-content-center">
+            <div class="text-center mx-3">
+                <a asp-action="Index" asp-controller="Diploma" class="btn btn-primary my-3" style="min-width:200px" asp-route-page="1" asp-route-size="@Constant.SizeOfDiplomaPage">Go back</a>
+            </div>
+            <div class="col-md-8 border border-secondary px-5 py-4 m-4 rounded-2 bg-black">
+                <h3 class="text-center text-uppercase mb-4 mt-3 text-light">
+                    Create diploma
+                </h3>
+                <div class="form-group px-4 text-light">
+                    <label asp-for="Name"></label>
+                    <input asp-for="Name" class="form-control text-light" style="padding:0.3rem 0" placeholder="Enter name">
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="mt-5 text-center mb-3">
+                    <button type="submit" class="btn btn-success" style="min-width:200px">
+                        Create
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial"></partial>
+    }
+
+}

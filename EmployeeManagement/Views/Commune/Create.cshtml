@@ -1,0 +1,69 @@
+﻿@using EmployeeManagement.Utils.Constant
+@model EmployeeManagement.Models.Entity.Commune
+@{
+    List<Province> provinces = ViewBag.Provinces ?? new List<Province>();
+    List<District> districts = ViewBag.Districts ?? new List<District>();
+    districts = districts.Where(d => d.ProvinceId == provinces[0].Id).ToList();
+}
+<form method="post">
+    <div class="container mb-5">
+        <div class="row d-flex justify-content-center">
+            <div class="text-center mx-3">
+                <a asp-action="Index" asp-controller="Commune" class="btn btn-primary my-3" style="min-width:200px" asp-route-page="1" asp-route-size="@Constant.SizeOfCommunePage">Go back</a>
+            </div>
+            <div class="col-md-8 border border-secondary px-5 py-4 m-4 rounded-2 bg-black">
+                <h3 class="text-center text-uppercase mb-4 mt-3 text-light">
+                    Create commune
+                </h3>
+                <div class="form-group px-4 text-light">
+                    <label asp-for="Name"></label>
+                    <input asp-for="Name" class="form-control text-light" style="padding:0.3rem 0" placeholder="Enter name">
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group px-4 mt-4 text-light">
+                    <label asp-for="Level"></label>
+                    <select asp-for="Level" class="form-control mb-3 text-light">
+                        <option value="Xã" class="text-dark">Xã </option>
+                        <option value="Phường" class="text-dark">Phường </option>
+                        <option value="Thị Trấn" class="text-dark">Thị Trấn </option>
+                    </select>
+                    <span asp-validation-for="Level" class="text-danger"></span>
+                </div>
+                <div class="form-group px-4 mt-4 text-light">
+                    <label>Province</label>
+                    <select id="province" class="form-control mb-3 text-light">
+                        @foreach (Province province in provinces)
+                        {
+                            <option value=@province.Id class="text-dark">@province.Name </option>
+                        }
+                    </select>
+                    @*<span asp-validation-for="ProvinceId" class="text-danger"></span>*@
+                </div>
+                <div class="form-group px-4 mt-4 text-light">
+                    <label asp-for="DistrictId"></label>
+                    <select asp-for="DistrictId" id="district" class="form-control mb-3 text-light">
+                        @foreach (District district in districts)
+                        {
+                           <option value=@district.Id class="text-dark">@district.Name </option>
+                        }
+                    </select>
+                    <span asp-validation-for="DistrictId" class="text-danger"></span>
+                </div>
+                <div class="mt-5 text-center mb-3">
+                    <button type="submit" class="btn btn-success" style="min-width:200px">
+                        Create
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<script src="~/js/commune.js"> </script>
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial"></partial>
+    }
+}
+
+

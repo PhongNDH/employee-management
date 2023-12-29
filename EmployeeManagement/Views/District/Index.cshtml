@@ -1,0 +1,88 @@
+﻿@using EmployeeManagement.Utils.Constant
+@model List<District>
+@{
+    ViewBag.NumberOfPage = ViewBag.NumberOfPage ?? 12;
+    ViewBag.CurrentPage = ViewBag.CurrentPage ?? 1;
+}
+<partial name="_Notification" />
+<div class="card shadow border-0 mt-5 mb-5">
+    <div class="card-header bg-dark bg-gradient ms-0 py-3" style="border-top-left-radius : 10px; border-top-right-radius: 10px">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="text-light text-uppercase mb-0">District</h2>
+            </div>
+        </div>
+    </div>
+    <div class="card-body p-4">
+        <div class="container mb-3">
+            <div class="row-cols-8 text-end">
+                <a asp-controller="District" asp-action="Create" class="btn btn-primary">
+                    <i class="bi bi-plus-circle"></i> Add new district
+                </a>
+            </div>
+        </div>
+        <table class="table table-bordered table-striped table-secondary mt-4">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Level</th>
+                    <th scope="col">District</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (District district in Model.OrderBy(u =>
+                u.Id))
+                {
+                    <tr>
+                        <td style="vertical-align:middle">
+                            @district.Id
+                        </td>
+                        <td style="vertical-align:middle">
+                            @district.Name
+                        </td>
+                        <td style="vertical-align:middle">
+                            @district.Level
+                        </td>
+                        <td style="vertical-align:middle">
+                            @district.Province!.Name
+                        </td>
+                        <td class="d-flex justify-content-evenly">
+                            <div>
+                                <a asp-action="Edit"
+                                   asp-controller="District"
+                                   asp-route-id="@district.Id"
+                                   class="btn btn-info btn-sm me-1">
+                                    <i class="bi bi-pencil-square"></i>
+                                </a>
+                            </div>
+                            <div>
+                                <a asp-action="Delete"
+                                   asp-controller="District"
+                                   asp-route-id="@district.Id"
+                                   class="btn btn-danger btn-sm ms-1">
+                                    <i class="bi bi-trash3"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <nav class="d-flex justify-content-center mt-4">
+            <ul class="pagination">
+                <li class="page-item">
+                    <a class="page-link text-danger" asp-controller="District" asp-action="Index" asp-route-page="1" asp-route-size="@Constant.SizeOfDistrictPage"> <span aria-hidden="true">&laquo;</span></a>
+                </li>
+                @for (int i = 1; i <= ViewBag.NumberOfPage; i++)
+                {
+                    <li class="page-item"><a class="page-link text-warning" style='@(i == ViewBag.CurrentPage ? "background-color: #dbdfe4;" : "")' asp-controller="District" asp-action="Index" asp-route-page=@i asp-route-size="@Constant.SizeOfDistrictPage">@i</a></li>
+                }
+                <li class="page-item">
+                    <a class="page-link text-danger" asp-controller="District" asp-action="Index" asp-route-page=@ViewBag.NumberOfPage asp-route-size="@Constant.SizeOfDistrictPage"><span aria-hidden="true">&raquo;</span></a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
