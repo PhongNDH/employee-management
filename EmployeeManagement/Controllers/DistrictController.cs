@@ -1,11 +1,8 @@
-﻿using EmployeeManagement.DataAccess.Data;
-using EmployeeManagement.DataAccess.Specification;
-using EmployeeManagement.Models;
+﻿using EmployeeManagement.DataAccess.Specification;
+using EmployeeManagement.Models.Entity;
 using EmployeeManagement.Models.Interface.Service;
-using EmployeeManagement.Utils;
 using EmployeeManagement.Utils.Constant;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace EmployeeManagement.Controllers
 {
@@ -25,8 +22,7 @@ namespace EmployeeManagement.Controllers
         {
             var spec = new DistrictDetailSpecification();
             var districts = await _districtService.GetEntityListWithSpecification(spec, page, size);
-            ViewBag.NumberOfPage = (int)Math.Ceiling((float)_districtService.GetEntityListAsync().Result.Count / size);
-            ViewBag.CurrentPage = page;
+            Console.WriteLine(districts.PageTotal);
             return View(districts);
         }
 

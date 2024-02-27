@@ -1,4 +1,5 @@
 ﻿using System.Linq.Expressions;
+using EmployeeManagement.Models.Entity;
 
 
 namespace EmployeeManagement.Models.Interface.Specification

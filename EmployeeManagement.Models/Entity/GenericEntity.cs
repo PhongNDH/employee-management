@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EmployeeManagement.Models
+namespace EmployeeManagement.Models.Entity
 {
     public class GenericEntity
     {

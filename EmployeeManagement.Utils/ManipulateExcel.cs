@@ -3,13 +3,14 @@ using System.Text;
 using EmployeeManagement.Models;
 using ClosedXML.Excel;
 using EmployeeManagement.Models.Entity;
+using EmployeeManagement.Models.Helper;
 using NPOI.HSSF.UserModel;
 using NPOI.SS.UserModel;
 
 
 namespace EmployeeManagement.Utils;
 
-public static class ImportExportExcel
+public static class ManipulateExcel
 {
     // Export xls file
     // public static void SaveEmployee(List<Employee> employeeList)
@@ -69,8 +70,9 @@ public static class ImportExportExcel
         var employees = new List<Employee>();
         try
         {
+            var startRow = 2; 
             var sheet = excelFile.Worksheet(1);
-            for (var i = 2; i <= sheet.LastRowUsed()!.RowNumber(); i++)
+            for (var i = startRow; i <= sheet.LastRowUsed()!.RowNumber(); i++)
             {
                 var row = sheet.Row(i);
                 Employee employee = new();
@@ -97,7 +99,8 @@ public static class ImportExportExcel
     private static void GetEmployee(IXLWorksheet sheet, IXLRow row, StringBuilder errorMessage,
         Employee employee, List<Occupation> occupations, List<EthnicGroup> ethnicGroups, List<Commune> communes)
     {
-        for (var column = 1; column <= row.CellCount(); column++)
+        var startColumn = 1;
+        for (var column = startColumn; column <= row.CellCount(); column++)
         {
             switch (column)
             {
@@ -132,11 +135,9 @@ public static class ImportExportExcel
         if (!Inspect.IsValidNameWithDiacritics(sheet.Cell(row, column).Value.ToString()))
         {
             errorMessage.Append($"Name must contain only letter. Error in row {row} column {column}.\n");
+            return;
         }
-        else
-        {
-            employee.Name = sheet.Cell(row, column).Value.ToString();
-        }
+        employee.Name = sheet.Cell(row, column).Value.ToString();
     }
 
     private static void GetDateOfBirth(IXLWorksheet sheet, int row, int column, StringBuilder errorMessage,
@@ -153,14 +154,12 @@ public static class ImportExportExcel
             errorMessage.Append($"Birthday is not in d/M/yyyy format in row {row} column {column}.\n");
             isValid = false;
         }
-
         if (!Inspect.IsValidDatetime(date))
         {
             errorMessage.Append(
                 $"Birthday must in the past and after 1/1/{Constant.Constant.MinBirthdateYear}. Error in row {row}  column {column}.\n");
             isValid = false;
         }
-
         if (isValid)
         {
             employee.Dob = date;
@@ -175,11 +174,9 @@ public static class ImportExportExcel
         if (ethnicId == null)
         {
             errorMessage.Append($"Ethnic Group is not specified row {row}, column {column}.\n");
+            return;
         }
-        else
-        {
-            employee.EthnicGroupId = (int)ethnicId;
-        }
+        employee.EthnicGroupId = (int)ethnicId;
     }
 
     private static void GetOccupation(IXLWorksheet sheet, int row, int column, StringBuilder errorMessage,
@@ -190,11 +187,9 @@ public static class ImportExportExcel
         if (jobId == null)
         {
             errorMessage.Append($"Occupation is not specified in row {row}, column {column}.\n");
+            return;
         }
-        else
-        {
-            employee.OccupationId = (int)jobId;
-        }
+        employee.OccupationId = (int)jobId;
     }
 
     private static void GetCitizenIdentityCardNumber(IXLWorksheet sheet, int row, int column,
@@ -208,11 +203,9 @@ public static class ImportExportExcel
         {
             errorMessage.Append(
                 $"Citizen Identity Card Number must contains {Constant.Constant.LengthOfCitizenIdentityCardNumber} digits. Error in row {row}, column {column}.\n");
+            return;
         }
-        else
-        {
-            employee.CitizenIdentityCard = citizenIdentityCard;
-        }
+        employee.CitizenIdentityCard = citizenIdentityCard;
     }
 
     private static void GetPhoneNumber(IXLWorksheet sheet, int row, int column, StringBuilder errorMessage,
@@ -225,11 +218,9 @@ public static class ImportExportExcel
         {
             errorMessage.Append(
                 $"Phone Number must contains {Constant.Constant.LengthOfPhoneNumber} digits. Error in row {row}, column {column}.\n");
+            return;
         }
-        else
-        {
-            employee.PhoneNumber = phoneNumber;
-        }
+        employee.PhoneNumber = phoneNumber;
     }
 
     private static void GetCommune(IXLWorksheet sheet, int row, int column, StringBuilder errorMessage,
@@ -240,11 +231,9 @@ public static class ImportExportExcel
         if (!string.IsNullOrEmpty(sheet.Cell(row, column).Value.ToString()) && communeId == null)
         {
             errorMessage.Append($"Commune is not specified in row {row}, column {column}.\n");
+            return;
         }
-        else 
-        {
-            employee.CommuneId = communeId;
-        }
+        employee.CommuneId = communeId;
     }
     
     private static void WriteEmployeeHeader(IXLWorksheet worksheet)

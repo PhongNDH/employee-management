@@ -1,8 +1,8 @@
 ﻿using EmployeeManagement.DataAccess.Data;
-using EmployeeManagement.Models;
 using EmployeeManagement.Models.Interface.Repository;
 using Microsoft.EntityFrameworkCore;
 using EmployeeManagement.DataAccess.Specification;
+using EmployeeManagement.Models.Entity;
 using EmployeeManagement.Models.Interface.Specification;
 
 namespace EmployeeManagement.DataAccess.Repository
@@ -31,13 +31,13 @@ namespace EmployeeManagement.DataAccess.Repository
             return await ApplySpecification(spec).ToListAsync();
         }
 
-        public async Task<List<T>> GetEntityListWithSpecification(ISpecification<T> spec, int page, int size)
-        {
-            return await ApplySpecification(spec)
-                .Skip((page - 1) * size)
-                .Take(size)
-                .ToListAsync();
-        }
+        // public async Task<List<T>> GetEntityListWithSpecification(ISpecification<T> spec, int page, int size)
+        // {
+        //     return await ApplySpecification(spec)
+        //         .Skip((page - 1) * size)
+        //         .Take(size)
+        //         .ToListAsync();
+        // }
 
         public async Task<T?> GetEntityByIdWithSpecification(ISpecification<T> spec)
         {

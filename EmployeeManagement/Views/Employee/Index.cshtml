@@ -1,7 +1,7 @@
 ﻿@using EmployeeManagement.Utils.Constant
-@using NPOI.HPSF
 @using EmployeeManagement.Models.Entity
-@model List<EmployeeManagement.Models.Entity.Employee>
+@using EmployeeManagement.Models.Helper
+@model Pagination<Employee>
 <partial name="_Notification"/>
 <div class="container">
     <div class="row pt-4 text-center text-uppercase">
@@ -17,8 +17,7 @@
         </button>
         <a asp-action="Create" asp-controller="Employee"
            class="btn btn-primary">
-            <i class="bi bi-plus-circle"></i> &nbsp; Create
-            new employee
+            <i class="bi bi-plus-circle"></i> &nbsp; Create new employee
         </a>
         @* <label for="import-btn" class="btn btn-warning" style="cursor: pointer"> *@
         @*     <i class="bi bi-arrow-up-circle"></i> &nbsp; Import employee list *@
@@ -41,7 +40,7 @@
     </div>
 </div>
 
-@if (Model.Count > 0)
+@if (Model.Data.Count > 0)
 {
     <table class="table table-bordered table-striped table-secondary mt-4 mb-5">
         <thead>
@@ -57,7 +56,7 @@
         </tr>
         </thead>
         <tbody>
-        @foreach (Employee employee in Model.OrderBy(u => u.Id))
+        @foreach (var employee in Model.Data.OrderBy(u => u.Id))
         {
             <tr>
                 <td style="vertical-align:middle">
@@ -120,14 +119,14 @@
                     <span aria-hidden="true">&laquo;</span>
                 </a>
             </li>
-            @for (int i = 1; i <= ViewBag.NumberOfPage; i++)
+            @for (var i = 1; i <= Model.PageTotal; i++)
             {
                 <li class="page-item">
-                    <a class="page-link text-warning" style='@(ViewBag.CurrentPage == i ? "background-color: #dbdfe4;" : "")' asp-controller="Employee" asp-action="Index" asp-route-page=@i asp-route-size="@Constant.SizeOfEmployeePage">@i</a>
+                    <a class="page-link text-warning" style='@(Model.PageNumber == i ? "background-color: #dbdfe4;" : "")' asp-controller="Employee" asp-action="Index" asp-route-page="@i" asp-route-size="@Constant.SizeOfEmployeePage">@i</a>
                 </li>
             }
             <li class="page-item">
-                <a class="page-link text-danger" asp-controller="Employee" asp-action="Index" asp-route-page=@ViewBag.NumberOfPage asp-route-size="@Constant.SizeOfEmployeePage">
+                <a class="page-link text-danger" asp-controller="Employee" asp-action="Index" asp-route-page="@Model.PageTotal" asp-route-size="@Constant.SizeOfEmployeePage">
                     <span aria-hidden="true">&raquo;</span>
                 </a>
             </li>

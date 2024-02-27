@@ -1,10 +1,12 @@
-namespace EmployeeManagement.Models.Entity;
+using EmployeeManagement.Models.Entity;
+
+namespace EmployeeManagement.Models.Helper;
 
 public class Response
-{
+{                           
     public Response(ErrorMessage errorMessage)
     {
-        this.ErrorMessage = errorMessage;
+        this.ErrorMessage = errorMessage;               
         this.Employee = new List<Employee>();
     }
     

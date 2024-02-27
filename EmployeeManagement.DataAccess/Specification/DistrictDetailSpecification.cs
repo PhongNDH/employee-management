@@ -1,4 +1,5 @@
 using EmployeeManagement.Models;
+using EmployeeManagement.Models.Entity;
 using EmployeeManagement.Models.Interface.Specification;
 
 namespace EmployeeManagement.DataAccess.Specification;

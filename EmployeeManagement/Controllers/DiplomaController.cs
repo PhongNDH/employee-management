@@ -1,4 +1,4 @@
-﻿using EmployeeManagement.Models;
+﻿using EmployeeManagement.Models.Entity;
 using EmployeeManagement.Models.Interface.Service;
 using EmployeeManagement.Utils.Constant;
 using Microsoft.AspNetCore.Mvc;
@@ -16,8 +16,6 @@ namespace EmployeeManagement.Controllers
         public async Task<IActionResult> Index(int page, int size)
         {
             var diplomas = await _diplomaService.GetEntityListAsync(page, size);
-            ViewBag.NumberOfPage = (int)Math.Ceiling((float)_diplomaService.GetEntityListAsync().Result.Count / size);
-            ViewBag.CurrentPage = page;
             return View(diplomas);
         }
 

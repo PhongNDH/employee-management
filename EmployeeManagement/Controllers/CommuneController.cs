@@ -1,12 +1,8 @@
-﻿using EmployeeManagement.DataAccess.Data;
-using EmployeeManagement.DataAccess.Specification;
-using EmployeeManagement.Models;
+﻿using EmployeeManagement.DataAccess.Specification;
 using EmployeeManagement.Models.Entity;
 using EmployeeManagement.Models.Interface.Service;
-using EmployeeManagement.Utils;
 using EmployeeManagement.Utils.Constant;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace EmployeeManagement.Controllers
 {
@@ -29,9 +25,6 @@ namespace EmployeeManagement.Controllers
         {
             var spec = new CommuneDetailSpecification();
             var communes = await _communeService.GetEntityListWithSpecification(spec, page, size);
-            ViewBag.CurrentPage = page;
-            ViewBag.NumberOfPage = (int)Math.Ceiling((float)_communeService.GetEntityListAsync().Result.Count / size);
-
             return View(communes);
         }
 

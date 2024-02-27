@@ -1,4 +1,5 @@
 using EmployeeManagement.Models;
+using EmployeeManagement.Models.Entity;
 
 namespace EmployeeManagement.DataAccess.SeedData
 {

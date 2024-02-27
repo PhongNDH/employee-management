@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace EmployeeManagement.Models
+namespace EmployeeManagement.Models.Entity
 {
     public class District : GenericEntity
     {

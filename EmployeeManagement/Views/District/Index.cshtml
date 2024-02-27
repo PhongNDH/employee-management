@@ -1,9 +1,8 @@
 ﻿@using EmployeeManagement.Utils.Constant
-@model List<District>
-@{
-    ViewBag.NumberOfPage = ViewBag.NumberOfPage ?? 12;
-    ViewBag.CurrentPage = ViewBag.CurrentPage ?? 1;
-}
+@using EmployeeManagement.Models.Entity
+@using EmployeeManagement.Models.Helper
+@model Pagination<District>
+
 <partial name="_Notification" />
 <div class="card shadow border-0 mt-5 mb-5">
     <div class="card-header bg-dark bg-gradient ms-0 py-3" style="border-top-left-radius : 10px; border-top-right-radius: 10px">
@@ -32,7 +31,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (District district in Model.OrderBy(u =>
+                @foreach (var district in Model.Data.OrderBy(u =>
                 u.Id))
                 {
                     <tr>
@@ -75,12 +74,12 @@
                 <li class="page-item">
                     <a class="page-link text-danger" asp-controller="District" asp-action="Index" asp-route-page="1" asp-route-size="@Constant.SizeOfDistrictPage"> <span aria-hidden="true">&laquo;</span></a>
                 </li>
-                @for (int i = 1; i <= ViewBag.NumberOfPage; i++)
+                @for (int i = 1; i <= Model.PageTotal; i++)
                 {
-                    <li class="page-item"><a class="page-link text-warning" style='@(i == ViewBag.CurrentPage ? "background-color: #dbdfe4;" : "")' asp-controller="District" asp-action="Index" asp-route-page=@i asp-route-size="@Constant.SizeOfDistrictPage">@i</a></li>
+                    <li class="page-item"><a class="page-link text-warning" style='@(i == Model.PageNumber ? "background-color: #dbdfe4;" : "")' asp-controller="District" asp-action="Index" asp-route-page=@i asp-route-size="@Constant.SizeOfDistrictPage">@i</a></li>
                 }
                 <li class="page-item">
-                    <a class="page-link text-danger" asp-controller="District" asp-action="Index" asp-route-page=@ViewBag.NumberOfPage asp-route-size="@Constant.SizeOfDistrictPage"><span aria-hidden="true">&raquo;</span></a>
+                    <a class="page-link text-danger" asp-controller="District" asp-action="Index" asp-route-page="@Model.PageTotal" asp-route-size="@Constant.SizeOfDistrictPage"><span aria-hidden="true">&raquo;</span></a>
                 </li>
             </ul>
         </nav>

@@ -1,9 +1,7 @@
 ﻿@using EmployeeManagement.Utils.Constant
-@model List<Diploma>
-@{
-    ViewBag.NumberOfPage = ViewBag.NumberOfPage ?? 3;
-    ViewBag.CurrentPage = ViewBag.CurrentPage ?? 1;
-}
+@using EmployeeManagement.Models.Entity
+@using EmployeeManagement.Models.Helper
+@model Pagination<Diploma>
 
 <partial name="_Notification" />
 <div class="card shadow border-0 mt-5 mb-5">
@@ -14,12 +12,11 @@
             </div>
         </div>
     </div>
-    @if (Model.Count == 0)
+    @if (Model.Data.Count == 0)
     {
         <div class="my-3 d-flex justify-content-center">There is no Awarding</div>
     }
-    
-    @if (Model.Count > 0)
+    else 
     {
         <div class="card-body p-4">
             <div class="container mb-3">
@@ -38,7 +35,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (Diploma diploma in Model.OrderBy(u => u.Id))
+                    @foreach (var diploma in Model.Data.OrderBy(u => u.Id))
                     {
                         <tr>
                             <td style="vertical-align:middle">
@@ -74,12 +71,12 @@
                     <li class="page-item">
                         <a class="page-link text-danger" asp-controller="Diploma" asp-action="Index" asp-route-page="1" asp-route-size="@Constant.SizeOfDiplomaPage"> <span aria-hidden="true">&laquo;</span></a>
                     </li>
-                    @for (int i = 1; i <= ViewBag.NumberOfPage; i++)
+                    @for (int i = 1; i <= Model.PageTotal; i++)
                     {
-                        <li class="page-item"><a class="page-link text-warning" style='@(ViewBag.CurrentPage == i ? "background-color: #dbdfe4;":"")' asp-controller="Diploma" asp-action="Index" asp-route-page=@i asp-route-size="@Constant.SizeOfDiplomaPage">@i</a></li>
+                        <li class="page-item"><a class="page-link text-warning" style='@(Model.PageNumber == i ? "background-color: #dbdfe4;":"")' asp-controller="Diploma" asp-action="Index" asp-route-page=@i asp-route-size="@Constant.SizeOfDiplomaPage">@i</a></li>
                     }
                     <li class="page-item">
-                        <a class="page-link text-danger" asp-controller="Diploma" asp-action="Index" asp-route-page=@ViewBag.NumberOfPage asp-route-size="@Constant.SizeOfDiplomaPage"><span aria-hidden="true">&raquo;</span></a>
+                        <a class="page-link text-danger" asp-controller="Diploma" asp-action="Index" asp-route-page="@Model.PageTotal" asp-route-size="@Constant.SizeOfDiplomaPage"><span aria-hidden="true">&raquo;</span></a>
                     </li>
                 </ul>
             </nav>

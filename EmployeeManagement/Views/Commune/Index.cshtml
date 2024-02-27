@@ -1,11 +1,8 @@
 ﻿@using EmployeeManagement.Utils.Constant
 @using EmployeeManagement.Models.Entity
-@model List<EmployeeManagement.Models.Entity.Commune>
-@{
-    ViewBag.NumberOfPage = ViewBag.NumberOfPage ?? 212;
-    ViewBag.CurrentPage = ViewBag.CurrentPage ?? 1;
-    ViewBag.InitialProvinceId = ViewBag.InitialProvinceId ?? 1;
-}
+@using EmployeeManagement.Models.Helper
+@model Pagination<Commune>
+
 <partial name="_Notification" />
 <div class="card shadow border-0 mt-5 mb-5">
     <div class="card-header bg-dark bg-gradient ms-0 py-3" style="border-top-left-radius : 10px; border-top-right-radius: 10px">
@@ -35,7 +32,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (Commune commune in Model.OrderBy(u => u.Id))
+                @foreach (Commune commune in Model.Data.OrderBy(u => u.Id))
                 {
                     <tr>
                         <td style="vertical-align:middle">
@@ -80,37 +77,37 @@
                 <li class="page-item">
                     <a class="page-link text-danger" asp-controller="Commune" asp-action="Index" asp-route-page="1" asp-route-size="@Constant.SizeOfCommunePage"> <span aria-hidden="true">&laquo;</span></a>
                 </li>
-                @if (ViewBag.CurrentPage < 6 || ViewBag.CurrentPage > (ViewBag.NumberOfPage - 5))
+                @if (Model.PageNumber < 6 || Model.PageNumber > (Model.PageTotal - 5))
                 {
-                    @for (int i = 1; i <= 7; i++)
+                    @for (var i = 1; i <= 7; i++)
                     {
-                        <li class="page-item"><a class="page-link text-warning" style='@(ViewBag.CurrentPage == i ? "background-color: #dbdfe4;":"")' asp-controller="Commune" asp-action="Index" asp-route-page=@i asp-route-size="@Constant.SizeOfCommunePage">@i</a></li>
+                        <li class="page-item"><a class="page-link text-warning" style='@(Model.PageNumber == i ? "background-color: #dbdfe4;":"")' asp-controller="Commune" asp-action="Index" asp-route-page="@i" asp-route-size="@Constant.SizeOfCommunePage">@i</a></li>
                     }
                     <li class="page-item"><a class="page-link text-warning">...</a></li>
-                    @for (int i = ViewBag.NumberOfPage - 6; i <= ViewBag.NumberOfPage; i++)
+                    @for (var i = Model.PageTotal - 6; i <= Model.PageTotal; i++)
                     {
-                        <li class="page-item"><a class="page-link text-warning" style='@(ViewBag.CurrentPage == i ? "background-color: #dbdfe4;":"")' asp-controller="Commune" asp-action="Index" asp-route-page=@i asp-route-size="@Constant.SizeOfCommunePage">@i</a></li>
+                        <li class="page-item"><a class="page-link text-warning" style='@(Model.PageNumber == i ? "background-color: #dbdfe4;":"")' asp-controller="Commune" asp-action="Index" asp-route-page="@i" asp-route-size="@Constant.SizeOfCommunePage">@i</a></li>
                     }
                 }
-                @if (ViewBag.CurrentPage >= 6 && ViewBag.CurrentPage <= ViewBag.NumberOfPage - 5)
+                @if (Model.PageNumber >= 6 && Model.PageNumber <= Model.PageTotal - 5)
                 {
-                    @for (int i = 1; i <= 2; i++)
+                    @for (var i = 1; i <= 2; i++)
                     {
-                        <li class="page-item"><a class="page-link text-warning" asp-controller="Commune" asp-action="Index" asp-route-page=@i asp-route-size="@Constant.SizeOfCommunePage">@i</a></li>
+                        <li class="page-item"><a class="page-link text-warning" asp-controller="Commune" asp-action="Index" asp-route-page="@i" asp-route-size="@Constant.SizeOfCommunePage">@i</a></li>
                     }
                     <li class="page-item"><a class="page-link text-warning">...</a></li>
-                    @for (int i = ViewBag.CurrentPage - 2; i <= ViewBag.CurrentPage + 2; i++)
+                    @for (var i = Model.PageNumber - 2; i <= Model.PageNumber + 2; i++)
                     {
-                        <li class="page-item"><a class="page-link text-warning" style='@(ViewBag.CurrentPage == i ? "background-color: #dbdfe4;":"")' asp-controller="Commune" asp-action="Index" asp-route-page=@i asp-route-size="@Constant.SizeOfCommunePage">@i</a></li>
+                        <li class="page-item"><a class="page-link text-warning" style='@(Model.PageNumber == i ? "background-color: #dbdfe4;":"")' asp-controller="Commune" asp-action="Index" asp-route-page=@i asp-route-size="@Constant.SizeOfCommunePage">@i</a></li>
                     }
                     <li class="page-item"><a class="page-link text-warning">...</a></li>
-                    @for (int i = ViewBag.NumberOfPage - 1; i <= ViewBag.NumberOfPage; i++)
+                    @for (var i = Model.PageTotal - 1; i <= Model.PageTotal; i++)
                     {
-                        <li class="page-item"><a class="page-link text-warning" asp-controller="Commune" asp-action="Index" asp-route-page=@i asp-route-size="@Constant.SizeOfCommunePage">@i</a></li>
+                        <li class="page-item"><a class="page-link text-warning" asp-controller="Commune" asp-action="Index" asp-route-page="@i" asp-route-size="@Constant.SizeOfCommunePage">@i</a></li>
                     }
                 }
                 <li class="page-item">
-                    <a class="page-link text-danger" asp-controller="Commune" asp-action="Index" asp-route-page=@ViewBag.NumberOfPage asp-route-size="@Constant.SizeOfCommunePage"><span aria-hidden="true">&raquo;</span></a>
+                    <a class="page-link text-danger" asp-controller="Commune" asp-action="Index" asp-route-page="@Model.PageTotal" asp-route-size="@Constant.SizeOfCommunePage"><span aria-hidden="true">&raquo;</span></a>
                 </li>
             </ul>
         </nav>

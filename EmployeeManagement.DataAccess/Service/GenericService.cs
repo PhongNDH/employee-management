@@ -1,4 +1,6 @@
 using EmployeeManagement.Models;
+using EmployeeManagement.Models.Entity;
+using EmployeeManagement.Models.Helper;
 using EmployeeManagement.Models.Interface.Repository;
 using EmployeeManagement.Models.Interface.Service;
 using EmployeeManagement.Models.Interface.Specification;
@@ -24,13 +26,15 @@ public class GenericService<T> : IGenericService<T> where T : GenericEntity
         return await _genericRepository.GetEntityList();
     }
 
-    public async Task<List<T>> GetEntityListAsync(int page, int size)
+    public async Task<Pagination<T>> GetEntityListAsync(int page, int size)
     {
-        List<T> districtList = await _genericRepository.GetEntityList();
-        return districtList
+        var entityList = await _genericRepository.GetEntityList();
+        var numberOfPage = (int)Math.Ceiling((float)entityList.Count / size);
+        var data = entityList
             .Skip((page - 1) * size)
             .Take(size)
             .ToList();
+        return new Pagination<T>(page,size, numberOfPage, data);
     }
 
     public async Task<T?> GetEntityByIdAsync(int? id)
@@ -43,9 +47,15 @@ public class GenericService<T> : IGenericService<T> where T : GenericEntity
         return await _genericRepository.GetEntityListWithSpecification(spec);
     }
 
-    public async Task<List<T>> GetEntityListWithSpecification(ISpecification<T> spec, int page, int size)
+    public async Task<Pagination<T>> GetEntityListWithSpecification(ISpecification<T> spec, int page, int size)
     {
-        return await _genericRepository.GetEntityListWithSpecification(spec, page, size);
+        var specList =  await _genericRepository.GetEntityListWithSpecification(spec);
+        var numberOfPage = (int)Math.Ceiling((float)specList.Count / size);
+        var data = specList
+            .Skip((page - 1) * size)
+            .Take(size)
+            .ToList();
+        return new Pagination<T>(page,size, numberOfPage, data);
     }
 
     public async Task<T?> GetEntityByIdWithSpecification(ISpecification<T> spec)

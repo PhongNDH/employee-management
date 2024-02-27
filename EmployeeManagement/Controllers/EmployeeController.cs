@@ -1,7 +1,6 @@
 using ClosedXML.Excel;
 using EmployeeManagement.DataAccess.SeedData;
 using EmployeeManagement.DataAccess.Specification;
-using EmployeeManagement.Models;
 using EmployeeManagement.Models.Entity;
 using EmployeeManagement.Models.Interface.Service;
 using EmployeeManagement.Utils;
@@ -36,8 +35,6 @@ namespace EmployeeManagement.Controllers
         {
             var spec = new EmployeeDetailSpecification();
             var employees = await _employeeService.GetEntityListWithSpecification(spec,page, size);
-            ViewBag.CurrentPage = page;
-            ViewBag.NumberOfPage = (int)Math.Ceiling((float)_employeeService.GetEntityListAsync().Result.Count / size);
             return View(employees);
         }
 
@@ -151,7 +148,7 @@ namespace EmployeeManagement.Controllers
         {
             var spec = new EmployeeDetailSpecification();
             var employeeList = await _employeeService.GetEntityListWithSpecification(spec);
-            ImportExportExcel.ExportEmployee(employeeList);
+            ManipulateExcel.ExportEmployee(employeeList);
             TempData["success"] = "Employee exported successfully to " + Constant.SaveFileName;
         }
         
@@ -171,7 +168,7 @@ namespace EmployeeManagement.Controllers
 
 
                     var response =
-                        ImportExportExcel.ImportEmployee(workbook, ethnicGroups, occupations, communes);
+                        ManipulateExcel.ImportEmployee(workbook, ethnicGroups, occupations, communes);
                     if (response.ErrorMessage != null || response.Employee.Count < 1)
                     {
                         TempData["error"] =$"Employee imported fail from {file.FileName}:  \n" + response.ErrorMessage?.Content;
