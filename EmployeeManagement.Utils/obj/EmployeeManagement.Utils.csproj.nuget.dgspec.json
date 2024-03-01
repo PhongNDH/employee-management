@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\phong\\Desktop\\Workspace\\Oceantech\\EmployeeManagement\\EmployeeManagement.Utils\\EmployeeManagement.Utils.csproj": {}
+    "C:\\Users\\phong\\Desktop\\Workspace\\EmployeeManagement\\EmployeeManagement.Utils\\EmployeeManagement.Utils.csproj": {}
   },
   "projects": {
-    "C:\\Users\\phong\\Desktop\\Workspace\\Oceantech\\EmployeeManagement\\EmployeeManagement.Models\\EmployeeManagement.Models.csproj": {
+    "C:\\Users\\phong\\Desktop\\Workspace\\EmployeeManagement\\EmployeeManagement.Models\\EmployeeManagement.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\phong\\Desktop\\Workspace\\Oceantech\\EmployeeManagement\\EmployeeManagement.Models\\EmployeeManagement.Models.csproj",
+        "projectUniqueName": "C:\\Users\\phong\\Desktop\\Workspace\\EmployeeManagement\\EmployeeManagement.Models\\EmployeeManagement.Models.csproj",
         "projectName": "EmployeeManagement.Models",
-        "projectPath": "C:\\Users\\phong\\Desktop\\Workspace\\Oceantech\\EmployeeManagement\\EmployeeManagement.Models\\EmployeeManagement.Models.csproj",
+        "projectPath": "C:\\Users\\phong\\Desktop\\Workspace\\EmployeeManagement\\EmployeeManagement.Models\\EmployeeManagement.Models.csproj",
         "packagesPath": "C:\\Users\\phong\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\phong\\Desktop\\Workspace\\Oceantech\\EmployeeManagement\\EmployeeManagement.Models\\obj\\",
+        "outputPath": "C:\\Users\\phong\\Desktop\\Workspace\\EmployeeManagement\\EmployeeManagement.Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\phong\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -63,14 +63,14 @@
         }
       }
     },
-    "C:\\Users\\phong\\Desktop\\Workspace\\Oceantech\\EmployeeManagement\\EmployeeManagement.Utils\\EmployeeManagement.Utils.csproj": {
+    "C:\\Users\\phong\\Desktop\\Workspace\\EmployeeManagement\\EmployeeManagement.Utils\\EmployeeManagement.Utils.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\phong\\Desktop\\Workspace\\Oceantech\\EmployeeManagement\\EmployeeManagement.Utils\\EmployeeManagement.Utils.csproj",
+        "projectUniqueName": "C:\\Users\\phong\\Desktop\\Workspace\\EmployeeManagement\\EmployeeManagement.Utils\\EmployeeManagement.Utils.csproj",
         "projectName": "EmployeeManagement.Utils",
-        "projectPath": "C:\\Users\\phong\\Desktop\\Workspace\\Oceantech\\EmployeeManagement\\EmployeeManagement.Utils\\EmployeeManagement.Utils.csproj",
+        "projectPath": "C:\\Users\\phong\\Desktop\\Workspace\\EmployeeManagement\\EmployeeManagement.Utils\\EmployeeManagement.Utils.csproj",
         "packagesPath": "C:\\Users\\phong\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\phong\\Desktop\\Workspace\\Oceantech\\EmployeeManagement\\EmployeeManagement.Utils\\obj\\",
+        "outputPath": "C:\\Users\\phong\\Desktop\\Workspace\\EmployeeManagement\\EmployeeManagement.Utils\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\phong\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -85,8 +85,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\phong\\Desktop\\Workspace\\Oceantech\\EmployeeManagement\\EmployeeManagement.Models\\EmployeeManagement.Models.csproj": {
-                "projectPath": "C:\\Users\\phong\\Desktop\\Workspace\\Oceantech\\EmployeeManagement\\EmployeeManagement.Models\\EmployeeManagement.Models.csproj"
+              "C:\\Users\\phong\\Desktop\\Workspace\\EmployeeManagement\\EmployeeManagement.Models\\EmployeeManagement.Models.csproj": {
+                "projectPath": "C:\\Users\\phong\\Desktop\\Workspace\\EmployeeManagement\\EmployeeManagement.Models\\EmployeeManagement.Models.csproj"
               }
             }
           }

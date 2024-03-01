@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nm/7F05mUir9/frdjq/GNpYQV3faa4BnNnK39JR92s1EtsAY9H8yGcNpiyBY3DdBXZrJYo3l3ZUoed2BOix1/g==",
+  "dgSpecHash": "mbIBjxOwYGTgwkFopP4Qe3dH6260wcRpzE4MB8xjgHinrhjtZNdSqiKvzIaUK5VWQ96r2ru5Ph4HStnhH2CTrA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\phong\\Desktop\\Workspace\\Oceantech\\EmployeeManagement\\EmployeeManagement.DataAccess\\EmployeeManagement.DataAccess.csproj",
+  "projectFilePath": "C:\\Users\\phong\\Desktop\\Workspace\\EmployeeManagement\\EmployeeManagement.DataAccess\\EmployeeManagement.DataAccess.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\phong\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\phong\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

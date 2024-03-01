@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = EmployeeManagement.Utils
-build_property.ProjectDir = C:\Users\phong\Desktop\Workspace\Oceantech\EmployeeManagement\EmployeeManagement.Utils\
+build_property.ProjectDir = C:\Users\phong\Desktop\Workspace\EmployeeManagement\EmployeeManagement.Utils\

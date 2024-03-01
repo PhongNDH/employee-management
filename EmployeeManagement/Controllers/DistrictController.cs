@@ -47,7 +47,7 @@ namespace EmployeeManagement.Controllers
 
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id is null or 0)
+            if (id is null)
             {
                 return NotFound();
             }
@@ -77,7 +77,7 @@ namespace EmployeeManagement.Controllers
 
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id is null or 0)
+            if (id is null)
             {
                 return NotFound();
             }

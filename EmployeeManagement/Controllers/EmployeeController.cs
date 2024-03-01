@@ -67,7 +67,7 @@ namespace EmployeeManagement.Controllers
 
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id is null or 0)
+            if (id is null)
             {
                 return NotFound();
             }
@@ -110,7 +110,7 @@ namespace EmployeeManagement.Controllers
 
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id is null or 0)
+            if (id is null)
             {
                 return NotFound();
             }
@@ -164,7 +164,8 @@ namespace EmployeeManagement.Controllers
                     var workbook = new XLWorkbook(memoryStream);
                     var ethnicGroups = await _ethnicGroupService.GetEntityListAsync();
                     var occupations = await _occupationService.GetEntityListAsync();
-                    var communes = await _communeService.GetEntityListAsync();
+                    var spec = new CommuneDetailSpecification();
+                    var communes = await _communeService.GetEntityListWithSpecification(spec);
 
 
                     var response =

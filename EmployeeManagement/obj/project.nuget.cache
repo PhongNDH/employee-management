@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pfS1t+VqvNuy5EvHtJNOPccv9qYWdkPdUXbOQfv3m1XJxpjqhDixSZzLeTl1UERLg8xkH0PMaoeJ6e84mmh7gQ==",
+  "dgSpecHash": "QW0U+JrOMTLoIZbzDLA0s1bTJCq4iVTV87psZ5WVa2tZatNkm3+4miWtGpFJKi+Ux0J43MtuJ1OvprBhjCi8iA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\phong\\Desktop\\Workspace\\Oceantech\\EmployeeManagement\\EmployeeManagement\\EmployeeManagement.csproj",
+  "projectFilePath": "C:\\Users\\phong\\Desktop\\Workspace\\EmployeeManagement\\EmployeeManagement\\EmployeeManagement.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\phong\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\phong\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",

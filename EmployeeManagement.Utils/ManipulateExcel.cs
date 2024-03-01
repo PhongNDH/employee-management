@@ -70,7 +70,7 @@ public static class ManipulateExcel
         var employees = new List<Employee>();
         try
         {
-            var startRow = 2; 
+            var startRow = 2;
             var sheet = excelFile.Worksheet(1);
             for (var i = startRow; i <= sheet.LastRowUsed()!.RowNumber(); i++)
             {
@@ -137,6 +137,7 @@ public static class ManipulateExcel
             errorMessage.Append($"Name must contain only letter. Error in row {row} column {column}.\n");
             return;
         }
+
         employee.Name = sheet.Cell(row, column).Value.ToString();
     }
 
@@ -154,12 +155,14 @@ public static class ManipulateExcel
             errorMessage.Append($"Birthday is not in d/M/yyyy format in row {row} column {column}.\n");
             isValid = false;
         }
+
         if (!Inspect.IsValidDatetime(date))
         {
             errorMessage.Append(
                 $"Birthday must in the past and after 1/1/{Constant.Constant.MinBirthdateYear}. Error in row {row}  column {column}.\n");
             isValid = false;
         }
+
         if (isValid)
         {
             employee.Dob = date;
@@ -176,6 +179,7 @@ public static class ManipulateExcel
             errorMessage.Append($"Ethnic Group is not specified row {row}, column {column}.\n");
             return;
         }
+
         employee.EthnicGroupId = (int)ethnicId;
     }
 
@@ -189,6 +193,7 @@ public static class ManipulateExcel
             errorMessage.Append($"Occupation is not specified in row {row}, column {column}.\n");
             return;
         }
+
         employee.OccupationId = (int)jobId;
     }
 
@@ -205,6 +210,7 @@ public static class ManipulateExcel
                 $"Citizen Identity Card Number must contains {Constant.Constant.LengthOfCitizenIdentityCardNumber} digits. Error in row {row}, column {column}.\n");
             return;
         }
+
         employee.CitizenIdentityCard = citizenIdentityCard;
     }
 
@@ -220,22 +226,36 @@ public static class ManipulateExcel
                 $"Phone Number must contains {Constant.Constant.LengthOfPhoneNumber} digits. Error in row {row}, column {column}.\n");
             return;
         }
+
         employee.PhoneNumber = phoneNumber;
     }
 
     private static void GetCommune(IXLWorksheet sheet, int row, int column, StringBuilder errorMessage,
         Employee employee, List<Commune> communes)
     {
-        var communeId = communes
-            .Find(x => x.Name == sheet.Cell(row, column).Value.ToString())?.Id;
-        if (!string.IsNullOrEmpty(sheet.Cell(row, column).Value.ToString()) && communeId == null)
+        var isValid = true;
+        var communeName = sheet.Cell(row, column).Value.ToString();
+        var districtName = sheet.Cell(row, column - 1).Value.ToString();
+        var provinceName = sheet.Cell(row, column - 2).Value.ToString();
+        var commune = communes
+            .Find(x => x.Name == sheet.Cell(row, column).Value.ToString());
+        if (string.IsNullOrEmpty(communeName) && string.IsNullOrEmpty(districtName) &&
+            string.IsNullOrEmpty(provinceName))
+            return;
+        if (commune == null || commune?.District?.Name != districtName || commune?.District?.Province?.Name != provinceName)
         {
-            errorMessage.Append($"Commune is not specified in row {row}, column {column}.\n");
+            isValid = false;
+        }
+
+        if (!isValid)
+        {
+            errorMessage.Append($"Commune, District, Province are not match in row {row}.\n");
             return;
         }
-        employee.CommuneId = communeId;
+
+        employee.CommuneId = commune?.Id;
     }
-    
+
     private static void WriteEmployeeHeader(IXLWorksheet worksheet)
     {
         worksheet.Cell(1, 1).Value = "Name";

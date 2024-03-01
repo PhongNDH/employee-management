@@ -1,5 +1,4 @@
-﻿using EmployeeManagement.Models;
-using EmployeeManagement.Models.Entity;
+﻿using EmployeeManagement.Models.Entity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
